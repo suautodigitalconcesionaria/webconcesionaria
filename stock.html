@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock | AUTOBA</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="index.html">AUTOBA</a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="financiacion.html">Financiación</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="section container">
+    <h1>Nuestro stock</h1>
+    <div class="filters">
+      <select id="filter-brand">
+        <option value="Todas">Todas las marcas</option>
+      </select>
+      <select id="filter-type">
+        <option value="Todos">Todos los tipos</option>
+        <option>Sedán</option>
+        <option>SUV</option>
+        <option>Pick-up</option>
+        <option>Hatchback</option>
+        <option>Utilitario</option>
+      </select>
+    </div>
+    <p id="stock-count"></p>
+    <div id="stock-cars" class="grid"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

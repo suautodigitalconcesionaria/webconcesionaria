@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Financiación | AUTOBA</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="index.html">AUTOBA</a>
+    <nav>
+      <a href="stock.html">Stock</a>
+      <a href="index.html">Inicio</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="section container">
+    <h1>Financiación a tu medida</h1>
+    <div class="card">
+      <label>Valor del auto
+        <input id="valor" type="number" value="30000000" />
+      </label>
+      <label>Anticipo (%)
+        <input id="anticipo" type="range" min="0" max="50" value="20" />
+      </label>
+      <label>Cuotas
+        <select id="cuotas">
+          <option>12</option>
+          <option>24</option>
+          <option>36</option>
+          <option selected>48</option>
+          <option>60</option>
+        </select>
+      </label>
+      <p id="cuota" class="price"></p>
+      <a id="fin-wa" class="btn" target="_blank">Quiero que me contacten</a>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | AUTOBA</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="index.html">AUTOBA</a>
+    <nav>
+      <a href="stock.html">Stock</a>
+      <a href="financiacion.html">Financiación</a>
+      <a href="index.html">Inicio</a>
+    </nav>
+  </header>
+
+  <main class="section container two-col">
+    <div>
+      <h1>Visitanos</h1>
+      <p>📍 Av. Corrientes 1234, CABA</p>
+      <p>📞 +54 11 4321-0000</p>
+      <p>🕐 Lun-Sáb de 9:00 a 18:00 hs</p>
+    </div>
+
+    <form id="contact-form" class="card">
+      <h3>Dejanos tu mensaje</h3>
+      <input name="nombre" placeholder="Nombre y apellido" required />
+      <input name="telefono" placeholder="Teléfono / WhatsApp" required />
+      <textarea name="mensaje" rows="4" placeholder="Mensaje"></textarea>
+      <button class="btn" type="submit">Enviar por WhatsApp</button>
+      <p id="contact-ok" class="ok"></p>
+    </form>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

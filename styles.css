@@ -1,0 +1,38 @@
+:root {
+  --black: #0a0a0a;
+  --white: #fff;
+  --silver: #c0c0c0;
+  --gray: #f5f5f5;
+  --red: #c8102e;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, Arial, sans-serif; background: var(--white); color: var(--black); }
+a { color: inherit; text-decoration: none; }
+
+.topbar { position: sticky; top: 0; z-index: 10; background: var(--black); color: var(--white); padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+.topbar nav { display: flex; gap: 14px; }
+.logo { font-weight: 800; }
+.container { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+.hero { background: linear-gradient(rgba(10,10,10,.8),rgba(10,10,10,.8)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat; color: var(--white); padding: 96px 0; }
+.badge { color: var(--silver); }
+.section { padding: 56px 0; }
+.dark { background: var(--black); color: var(--white); }
+.center { text-align: center; }
+.title-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 16px; }
+.card, .car { border: 1px solid var(--silver); border-radius: 8px; padding: 16px; background: var(--white); }
+.car img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 6px; }
+.price { font-size: 1.5rem; font-weight: 800; }
+.btn { display: inline-block; background: var(--red); color: var(--white); border: 1px solid var(--red); padding: 12px 18px; border-radius: 4px; }
+.btn-outline { display: inline-block; border: 1px solid var(--silver); color: var(--white); padding: 12px 18px; border-radius: 4px; }
+.cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.filters { display: flex; gap: 10px; flex-wrap: wrap; }
+.filters select, input, textarea { width: 100%; padding: 10px; border: 1px solid var(--silver); border-radius: 4px; margin-top: 6px; }
+.two-col { display: grid; gap: 16px; }
+.ok { color: #15803d; font-weight: 600; }
+
+@media (min-width: 900px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .two-col { grid-template-columns: 1fr 1fr; }
+}

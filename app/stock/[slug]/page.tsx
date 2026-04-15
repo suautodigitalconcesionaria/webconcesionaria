@@ -2,15 +2,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { CarCard } from '@/components/car-card';
-import { cars, currency, installments, whatsappLink } from '@/lib/data';
+import { getCarBySlug, getCars } from '@/lib/airtable';
+import { currency, installments, whatsappLink } from '@/lib/data';
 
 export default async function CarDetail({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const car = cars.find((item) => item.slug === slug);
+  const car = await getCarBySlug(slug);
 
   if (!car) return notFound();
 
-  const similar = cars.filter((item) => item.slug !== car.slug && item.type === car.type).slice(0, 3);
+  const allCars = await getCars();
+  const similar = allCars.filter((item) => item.slug !== car.slug && item.type === car.type).slice(0, 3);
 
   return (
     <>

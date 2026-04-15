@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { CarCard } from './car-card';
-import { cars, faqs, testimonials, whatsappLink } from '@/lib/data';
+import { Car, faqs, testimonials, whatsappLink } from '@/lib/data';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -15,14 +15,14 @@ const fadeInUp = {
 
 const brands = ['Todas', 'Toyota', 'Volkswagen', 'Ford', 'Chevrolet', 'Renault', 'Peugeot'];
 
-export function HomePage() {
+export function HomePage({ cars }: { cars: Car[] }) {
   const [brand, setBrand] = useState('Todas');
   const [openFaq, setOpenFaq] = useState(0);
 
   const featuredCars = useMemo(() => {
     if (brand === 'Todas') return cars.slice(0, 3);
     return cars.filter((car) => car.brand === brand).slice(0, 3);
-  }, [brand]);
+  }, [brand, cars]);
 
   return (
     <>
@@ -34,7 +34,7 @@ export function HomePage() {
             </motion.p>
             <motion.div className="red-line" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.6, delay: 0.4 }} />
             <h1>Tu próximo auto,<br />sin vueltas.</h1>
-            <p className="hero-sub">Más de 200 autos en stock. Financiación en cuotas. Atención inmediata por WhatsApp.</p>
+            <p className="hero-sub">Más de {cars.length} autos en stock. Financiación en cuotas. Atención inmediata por WhatsApp.</p>
             <div className="cta-row">
               <a className="wa-button" href={whatsappLink('Hola! Vi su web y quiero consultar por autos disponibles.')} target="_blank">Consultar por WhatsApp →</a>
               <Link className="outline-light" href="/stock">Ver stock →</Link>
@@ -45,7 +45,7 @@ export function HomePage() {
 
       <section className="stats">
         <div className="container stats-grid">
-          {[['+500', 'Autos vendidos'], ['+200', 'Autos en stock'], ['15', 'Años de experiencia'], ['4.9★', 'Puntuación Google']].map((item) => (
+          {[['+500', 'Autos vendidos'], [`+${cars.length}`, 'Autos en stock'], ['15', 'Años de experiencia'], ['4.9★', 'Puntuación Google']].map((item) => (
             <div key={item[1]}><strong>{item[0]}</strong><span>{item[1]}</span></div>
           ))}
         </div>
